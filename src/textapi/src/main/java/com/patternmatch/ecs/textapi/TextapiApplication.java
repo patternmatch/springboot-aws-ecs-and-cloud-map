@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class TextapiApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(TextapiApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(TextapiApplication.class, args);
+    }
 }
