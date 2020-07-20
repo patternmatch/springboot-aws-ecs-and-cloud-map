@@ -113,6 +113,12 @@ Please check our blog post for detailed instructions.
 
 ## Available tags
 
-1. TODO
+1. [api-implemented](https://github.com/patternmatch/springboot-aws-ecs-and-cloud-map/tree/api-implemented)
+
+* both applications expose REST interface
+* applications communicate via REST
+* the project is working end-to-end
+
+
 
 
