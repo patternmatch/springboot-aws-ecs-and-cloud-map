@@ -107,7 +107,7 @@ Response:
 }
 ```
 
-## How to run it locally?
+## How to run it on ECS?
 
 Please check our blog post for detailed instructions.
 
