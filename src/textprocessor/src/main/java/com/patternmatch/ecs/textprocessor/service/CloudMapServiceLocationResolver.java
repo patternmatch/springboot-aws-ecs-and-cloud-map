@@ -8,6 +8,7 @@ import com.amazonaws.services.servicediscovery.model.HealthStatus;
 import com.amazonaws.services.servicediscovery.model.HttpInstanceSummary;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 
 @Service
 @Slf4j
+@ConditionalOnProperty(value = "servicediscovery.method", havingValue = "sdk")
 public class CloudMapServiceLocationResolver implements ServiceLocationResolver {
 
     private static final String AWS_INSTANCE_IPV_4_ATTRIBUTE = "AWS_INSTANCE_IPV4";
@@ -28,6 +30,10 @@ public class CloudMapServiceLocationResolver implements ServiceLocationResolver 
 
     @Value("${aws.cloudmap.service}")
     private String cloudMapService;
+
+    public CloudMapServiceLocationResolver() {
+        log.info("ServiceLocationResolver: {}", this.getClass().getCanonicalName());
+    }
 
     @Override
     public String resolve() {
@@ -48,6 +54,10 @@ public class CloudMapServiceLocationResolver implements ServiceLocationResolver 
         }
 
         final HttpInstanceSummary result = allInstances.get(RAND.nextInt(allInstances.size()));
-        return result.getAttributes().get(AWS_INSTANCE_IPV_4_ATTRIBUTE) + ":" + result.getAttributes().get(AWS_INSTANCE_PORT_ATTRIBUTE);
+        final String serviceLocation = result.getAttributes().get(AWS_INSTANCE_IPV_4_ATTRIBUTE) + ":" + result.getAttributes().get(AWS_INSTANCE_PORT_ATTRIBUTE);
+
+        log.info("Given {}, found {}", cloudMapService + "." + cloudMapNamespace, serviceLocation);
+
+        return serviceLocation;
     }
 }
