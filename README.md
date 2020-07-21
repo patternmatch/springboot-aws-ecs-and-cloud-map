@@ -122,3 +122,7 @@ Please check our blog post for detailed instructions.
 2. [sdk-service-discovery](https://github.com/patternmatch/springboot-aws-ecs-and-cloud-map/tree/sdk-service-discovery)
 
 * using AWS Cloud Map SDK for service discovery
+
+3. [dns-service-discovery](https://github.com/patternmatch/springboot-aws-ecs-and-cloud-map/tree/dns-service-discovery)
+
+* using DNS lookup for service discovery
