@@ -119,6 +119,6 @@ Please check our blog post for detailed instructions.
 * applications communicate via REST
 * the project is working end-to-end
 
+2. [sdk-service-discovery](https://github.com/patternmatch/springboot-aws-ecs-and-cloud-map/tree/sdk-service-discovery)
 
-
-
+* using AWS Cloud Map SDK for service discovery
