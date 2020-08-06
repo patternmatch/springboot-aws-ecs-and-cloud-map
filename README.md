@@ -1,7 +1,7 @@
 # ECS Service Discovery in Java
 
 Sample project to present the idea of Service Discovery on Amazon Elastic Container Service (ECS).
-Come and visit our blog for detailed information - [todo-link-post](http://todo).
+Come and visit our blog for detailed information - [Handling Amazon ECS Service Discovery in Java](https://pattern-match.com/blog/ecs-service-discovery-in-java/).
 
 The project consists of two SpringBoot applications. If not specified, the instructions below can be used in both cases.
 
